@@ -1,0 +1,26 @@
+<!--pages/admin-userList/admin-userList.wxml-->
+<!-- <view class="head">
+    <view class="head_item">姓名</view>
+    <view class="ring"></view>
+    <view class="head_item">年级</view>
+</view> -->
+<view style="display: flex;color: grey;margin-left:15rpx;">
+    <view wx:if="true" style="display: flex;align-items: center;flex-direction: column;"> 
+        <text>总共有 {{userList.length}}个校友</text>
+        <text style="color: grey;">点击修改校友信息，长按删除校友</text>
+    </view>
+</view>
+<view class="" wx:for="{{userList}}" wx:key="_id" data-id="{{item}}" bindlongpress="del" bindtap='modifyInfo'>
+    <view class="weui-cell">
+        <!-- <view>
+            <image src="{{item.path}}"></image>
+        </view> -->
+        <view>
+            <view>姓名：{{item.name}}</view>
+            <view>学号：{{item.no}}</view>
+            <view>性别：{{item.gender}}</view>
+            <view>年级：{{item.grade}}</view>
+            <view>------------------------</view>
+        </view>
+    </view>
+</view>

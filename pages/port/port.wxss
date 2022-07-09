@@ -1,0 +1,16 @@
+/* pages/port/port.wxss */
+ /* 小程序默认样式 */ 
+ button[type="primary"] {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 36rpx;
+    text-align: center;
+    background-color: #007AFF !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    border-radius: 10px;
+}

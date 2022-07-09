@@ -1,0 +1,6 @@
+<!--pages/port/port.wxml-->
+<view>
+    <button type="primary" bindtap="manage_video">管理视频</button>
+    <button type="primary" bindtap="manage_user">管理用户</button>
+</view>
+

@@ -1,0 +1,22 @@
+<view class="main">
+<View  style="display: flex;color: grey;margin-left:15rpx;">
+  <text>已上传 {{videolist.length}}个视频</text>
+  <view wx:if="true" style="display: flex;align-items: center;flex-direction: column;">
+  <!-- <view wx:if="{{ti}}" style="display: flex;align-items: center;flex-direction: column;"> -->
+  <text style="color: grey;">，长按删除</text>
+  </view>
+</View>
+<view  style="margin: 15rpx;border-top: 2rpx grey solid;width: 100%;"></view>
+
+  <view wx:for="{{videolist}}" wx:key="_id" wx:for-index="index" wx:for-item="item">
+    <view class="item" data-id="{{item}}" bindlongpress="del">
+      <view class="video">
+        <video src="{{item.videourl}}" object-fit="contain" play-btn-position="center"></video>
+      </view>
+      <view class="text">
+        <text>视频名称：{{item.name}}\n上传时间：{{item.createtime}}\n视频简介：{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+<button type="primary" bindtap="zhengshu">生成证书</button>
+</view>

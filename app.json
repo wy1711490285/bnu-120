@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/index/index",
+    "pages/user/user",
+    "pages/message/message",
+    "pages/uploadVideo/uploadVideo",
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/port/port",
+    "pages/admin-videoList/admin-videoList",
+    "pages/admin-userList/admin-userList",
+    "pages/modify-userInfo/modify-userInfo",
+    "pages/Certificate/Certificate"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#E3170D",
+    "navigationBarTitleText": "BNU120",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/tabs/home.png",
+        "selectedIconPath": "/images/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/uploadVideo/uploadVideo",
+        "iconPath": "/images/tabs/upload.png",
+        "selectedIconPath": "/images/tabs/upload-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/images/tabs/message.png",
+        "selectedIconPath": "/images/tabs/message-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

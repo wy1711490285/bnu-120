@@ -1,0 +1,44 @@
+/* pages/user/user.wxss */
+.nav{
+    background-color: #fff;
+}
+.top{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto;
+}
+.nickname{
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+.item{
+  height: 70rpx;
+  background-color: #fff;
+  margin: 20rpx;
+  display: flex;
+  border-radius: 20rpx;
+}
+.left{
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+.right{
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  color: #ccc;
+  margin-right: 20rpx;
+}
+.exit{
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    color: rgb(0, 0, 0);
+    margin-right: 20rpx;
+  }
+.back_img{
+    width: 100rpx;
+    height: 100rpx;
+    background: url('https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0')
+}

@@ -1,0 +1,24 @@
+<!--pages/adminvideo.wxml-->
+<view style="margin:10rpx">
+  <text style="color: black;size: 3rpx; margin: 2rpx 300rpx;">视频管理</text>
+  <view style="display: flex;justify-content: space-between;">
+    <checkbox-group bindchange="changeall">
+      <checkbox model:checked="{{allchecked}}">全选</checkbox>
+    </checkbox-group>
+    <button bindtap="download" style="margin: 10rpx;" size="mini" type="primary">下载</button>
+  </view>
+  <view>
+      <view wx:for="{{videolist}}" wx:key="_id" wx:for-index="index" wx:for-item="item">
+        <view class="item" data-id="{{item}}" bindlongpress="del">
+          <view class="video">
+            <video src="{{item.videourl}}" object-fit="contain" play-btn-position="center"></video>
+          </view>
+          <view class="text">
+            <text>视频名称：{{item.name}}\n上传时间：{{item.createtime}}\n视频简介：{{item.text}}</text>
+          </view>
+          <checkbox data-id="{{item}}" bindtap="changeitem" model:checked="{{item.checked}}" value="{{index}}"></checkbox>
+        </view>
+  </view>
+
+</view>
+</view>

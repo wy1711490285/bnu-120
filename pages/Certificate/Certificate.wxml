@@ -1,0 +1,11 @@
+<!--pages/Certificate/Certificate.wxml-->
+
+<view catchtouchmove="preventTouchMove" class="canvasMain" hidden="{{!posterDatas.show}}">
+  <canvas type="2d" id="firstCanvas" class="firstCanvas" style="width:{{posterDatas.width}}px;height:{{posterDatas.height}}px;"></canvas>
+  <button wx:if="{{posterDatas.buttonType==1}}" class='button' bindtap='onDownloadImges'>点击保存</button>
+  <button wx:if="{{posterDatas.buttonType==2}}" class='button'>已保存到相册</button>
+  <button wx:if="{{posterDatas.buttonType==3}}" class='button' open-type='openSetting' bindopensetting='onBindOpenSetting'>无相册权限或取消保存</button>
+  <image bindtap='onIsCanvas' class='x' src='https://s3.bmp.ovh/imgs/2022/07/06/60637a3b140bd557.png'></image>
+</view>
+ 
+<view class="canvas2d" catchtap='onBuildPosterSaveAlbum'>立即生成</view>

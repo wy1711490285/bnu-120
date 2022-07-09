@@ -1,0 +1,15 @@
+/* pages/adminvideo.wxss */.item{
+  display: flex;
+  height: 300rpx;
+  /* background-color: chartreuse; */
+  margin: 10rpx;
+}
+video{
+  width: 400rpx;
+  height: 300rpx;
+  margin: 10rpx;
+  margin-top: 0rpx;
+}
+.main{
+  margin: 10rpx;
+}

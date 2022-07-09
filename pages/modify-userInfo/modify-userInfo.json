@@ -1,0 +1,9 @@
+{
+    "usingComponents": {},
+    "navigationBarBackgroundColor": "#405f80",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "编辑校友信息",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+}
