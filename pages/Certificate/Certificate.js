@@ -110,14 +110,16 @@ Page({
       //证书
       var promise1 = new Promise(function (resolve, reject) {
         const photo = canvas.createImage();
-        photo.src = "https://s3.bmp.ovh/imgs/2022/07/06/f9e91a32255b178f.jpg";
+        // photo.src = "https://s3.bmp.ovh/imgs/2022/07/06/f9e91a32255b178f.jpg";
+        photo.src = "/images/certificate/background.jpg";
         photo.onload = (e) => {
           resolve(photo);
         }
       });
       var promise2 = new Promise(function (resolve, reject) {
         const photo = canvas.createImage();
-        photo.src = "https://s3.bmp.ovh/imgs/2022/07/06/8aba11e4205ec9f0.png";
+        // photo.src = "https://s3.bmp.ovh/imgs/2022/07/06/8aba11e4205ec9f0.png";
+        photo.src = "/images/certificate/icon.png";
         photo.onload = (e) => {
           resolve(photo);
         }
