@@ -1,0 +1,253 @@
+/* 导航栏部分 */
+.nav {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    flex-shrink: 0;
+    background: #fff;
+}
+
+.nav-title {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 115px;
+    padding-right: 115px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    bottom: 6px;
+}
+
+/* 导航栏结束 */
+
+/* 下拉菜单 */
+.list {
+    /* 能显示出来 */
+    z-index: 100;
+    /* 固定不动 */
+    position: fixed;
+    width: 180rpx;
+    height: 360rpx;
+}
+
+.listIcon {
+    width: 56rpx;
+    height: 56rpx;
+    margin-left: 25px;
+    z-index: 100;
+}
+
+/* .condition {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    position: relative;
+} */
+
+.option-list {
+    position: absolute;
+    width: 100%;
+    padding: 0rpx 56rpx;
+    top: 90rpx;
+    border-radius: 6rpx;
+    background: rgba(39, 130, 215, 0.781);
+}
+
+.list-item {
+    z-index: 1000;
+    width: 100%;
+    /* width: auto; */
+    color: #000000;
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    border-width: thick;
+    /* border-style: inset; */
+    /* justify-content: space-between;  */
+}
+
+.title {
+    width: auto;
+    font-family: 楷体;
+
+}
+
+/* 下拉框结束 */
+
+
+/* 悬浮按钮 */
+.releaseBtn {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    box-shadow: 0cm;
+}
+
+.releaseIcon {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 80%;
+    /* border: solid 1rpx #4b9fff; */
+    padding: 2rpx;
+    /* scrollbar-shadow-color: #00aeff; */
+}
+
+/* 悬浮按钮结束 */
+
+
+/* 参考代码：https://blog.csdn.net/Weirdo_ran/article/details/120187815?utm_term=%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%8C%E5%96%84%E8%B5%84%E6%96%99%E9%A1%B5%E9%9D%A2csdn&utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-0-120187815-null-null&spm=3001.4430*/
+
+/* 导航栏下方 */
+.myview {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(235, 207, 189);
+}
+
+
+/* 用户信息 */
+.mytopview {
+    width: 100%;
+    height: 26%;
+    border-bottom: 3px solid rgb(0, 0, 0);
+    display: flex;
+}
+
+.topVisible {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.imgview {
+    /* img占一格 */
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.infoview {
+    /* info占3格 */
+    flex: 3;
+    /* border:1px  solid  black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 头像 */
+.fview {
+    align-items: center;
+    border-radius: 100%;
+}
+
+/* 头像 */
+.cimg {
+
+    align-items: center;
+    /* width: 90%; */
+    /* height: 90%; */
+    border-radius: 100%;
+    /* margin: 5px; */
+}
+
+/* 文字 */
+.box {
+    width: 90%;
+    height: 20%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    margin-top: 21px;
+    margin-left: 10px;
+    color: rgb(0, 0, 0);
+    font-family: 楷体;
+    font-size: 16px;
+}
+
+.please {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+.pleText{
+    align-items: center;
+}
+
+
+/* 视频信息 */
+.mybelowview {
+    column-count: 1;
+    column-gap: 10rpx;
+}
+
+.belowVisible {
+    width: 100%;
+    height: 100%
+}
+
+.videoList {
+    width: 100%;
+    font-size: 10px;
+    margin: 6rpx;
+    background-color: #FFF;
+    border-radius: 20rpx;
+    display: inline-block;
+}
+
+.videoitem {
+    column-count: 2;
+    border: solid rgb(211, 169, 169) 2px;
+    width: 100%;
+    font-size: 16px;
+    background-color: #FFF;
+    border-radius: 20rpx;
+    display: inline-block;
+}
+
+.video {
+    width: 310rpx;
+    height: 210rpx;
+    margin: 3%
+}
+
+.text {
+    width: 90%;
+    height: 210rpx;
+    overflow: hidden;
+    /* //文字隐藏后添加省略号 */
+    text-overflow: ellipsis;
+    /* //强制不换行 */
+    white-space: nowrap;
+}
+
+.box2 {
+    overflow: hidden;
+    /* //文字隐藏后添加省略号 */
+    text-overflow: ellipsis;
+    /* //强制不换行 */
+    white-space: nowrap;
+    width: 99%;
+    height: 210rpx;
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-family: 楷体;
+    font-size: 16px;
+}

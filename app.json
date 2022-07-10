@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/home/home", 
     "pages/login/login",
     "pages/index/index",
     "pages/user/user",
@@ -11,7 +12,8 @@
     "pages/admin-videoList/admin-videoList",
     "pages/admin-userList/admin-userList",
     "pages/modify-userInfo/modify-userInfo",
-    "pages/Certificate/Certificate"
+    "pages/Certificate/Certificate",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,0 +1,65 @@
+<!-- 导航栏 -->
+<view class='nav' style='height:{{navHeight}}px'>
+    <view class='nav-title' style='top:{{top}}px'>BNU120</view>
+
+</view>
+
+<!-- 下拉菜单 -->
+<view class='list' style="top: {{top - 3 }}px">
+    <image bindtap="showCondition" class="listIcon" src="/images/list.png" />
+    <!-- conditionVisible,展开列表 -->
+    <cover-view class="option-list" style="height: {{conditionVisible ? '270rpx': '0'}}">
+        <cover-view bindtap="onChnageCondition" data-id="{{item.id}}" class="list-item" wx:for="{{conditionList}}" wx:key="index" wx:for-index="index">
+            <cover-view class="title">{{item.title}}</cover-view>
+        </cover-view>
+    </cover-view>
+</view>
+
+<!-- 正文 -->
+<view style="padding-top: {{navHeight}}px;" class="myview">
+    <view class="mytopview">
+        <!-- 有数据 才有info=true  -->
+        <!-- 有list，才有以下内容 -->
+        <view class="topVisible" wx:if="{{info}}" wx:for="{{list}}">
+            <view class="imgview">
+                <!-- 以下style只调整大小，别放到wxss里 -->
+                <button class="fview" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="width:160rpx;height:160rpx;padding:0;">
+                    <image class="cimg" style="width:160rpx;height:160rpx;padding:0;" src="{{avatarUrl}}"></image>
+                </button>
+            </view>
+            <view class="infoview">
+                <view class="box">姓名: {{item.name}}</view>
+                <view class="box">入学年份:{{item.sname}}</view>
+                <view class="box">联系方式:{{item.sphone}}</view>
+            </view>
+        </view>
+        <!-- 没有list，才有以下内容 是不是可以删掉--》【wx:if="{{!info}} -->
+        <view wx:if="{{!info}}" class="please">
+            <view class="pleText" style="position: relative; top: 90rpx">
+                *******写一些对北师大祝福的话
+            </view>
+            <button bind:chooseavatar="upInfo"  type="default" style="position: relative; top: 190rpx">请完善您的信息</button>
+        </view>
+    </view>
+
+    <view class="mybelowview">
+        <!-- 有数据 才有videoinfo=true   -->
+        <view wx:if="{{videoinfo}}" wx:for="{{videolist}}" wx:key="_id" wx:for-index="index" wx:for-item="item">
+            <view class="videoitem" data-id="{{item}}">
+                <video class="video" src="{{item.videourl}}" object-fit="contain" play-btn-position="center"></video>
+                <view class="text" bindlongpress="del">
+                    <text class="box2">视频名称：{{item.name}}</text>
+                    <view class="box2">上传时间：{{item.createtime}}</view>
+                    <view class="box2">视频简介：{{item.text}}</view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{!videoinfo}}">写一些感谢您上传视频bbbbb</view>
+    </view>
+
+</view>
+
+<!-- 弹出按钮 -->
+<view class="releaseBtn" bind:tap="gotoUpdate">
+    <image class="releaseIcon" src="/images/add2.png" />
+</view>
