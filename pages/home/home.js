@@ -102,8 +102,8 @@ Page({
     // 上传视频
     gotoUpdate: function () {
         // 跳转至index页面
-        wx.redirectTo({
-            url: '../uploadVideo/uploadVideo'
+        wx.switchTab({
+          url: '/pages/uploadVideo/uploadVideo',
         })
     },
     exit: function (e) {

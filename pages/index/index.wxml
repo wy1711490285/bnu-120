@@ -14,9 +14,18 @@
         <video src="{{item.videourl}}" object-fit="contain" play-btn-position="center"></video>
       </view>
       <view class="text">
-        <text>视频名称：{{item.name}}\n上传时间：{{item.createtime}}\n视频简介：{{item.text}}</text>
+        <view class="videoname">
+            <text>{{item.name}}</text>
+          </view>
+
+          <view class="videotime">
+            {{item.createtime}}
+          </view>
+
+          <view class="videoinfo">{{item.text}}
+          </view>
       </view>
     </view>
   </view>
-<button type="primary" bindtap="zhengshu">生成证书</button>
+<button wx:if="{{haveCertificate}}" type="primary" bindtap="zhengshu">生成证书</button>
 </view>

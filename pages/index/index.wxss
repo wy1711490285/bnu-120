@@ -13,3 +13,33 @@ video{
 .main{
   margin: 10rpx;
 }
+
+.videoinfo {
+  word-break: break-all;
+  white-space: pre-wrap;
+ color: grey;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 3;
+ font-size: medium;
+}
+.videotime{
+ color: #000;
+ font-size: medium;
+ overflow: hidden;
+}
+
+.videoname {
+ color: #000;
+ font-size: larger;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 1;
+}
+.text{
+ margin-left: 10rpx;
+}

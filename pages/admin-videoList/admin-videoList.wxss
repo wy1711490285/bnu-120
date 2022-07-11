@@ -1,15 +1,48 @@
-/* pages/adminvideo.wxss */.item{
+/* pages/adminvideo.wxss */
+.item {
   display: flex;
   height: 300rpx;
   /* background-color: chartreuse; */
   margin: 10rpx;
 }
-video{
+
+video {
   width: 400rpx;
   height: 300rpx;
   margin: 10rpx;
   margin-top: 0rpx;
 }
-.main{
+
+.main {
   margin: 10rpx;
+}
+
+.videoinfo {
+   word-break: break-all;
+   white-space: pre-wrap;
+  color: grey;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: small;
+}
+.videotime{
+  color: #000;
+  font-size: small;
+  overflow: hidden;
+}
+
+.videoname {
+  color: #000;
+  font-size: large;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.text{
+  margin-left: 10rpx;
 }

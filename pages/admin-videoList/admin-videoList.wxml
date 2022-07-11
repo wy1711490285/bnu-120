@@ -8,17 +8,26 @@
     <button bindtap="download" style="margin: 10rpx;" size="mini" type="primary">下载</button>
   </view>
   <view>
-      <view wx:for="{{videolist}}" wx:key="_id" wx:for-index="index" wx:for-item="item">
-        <view class="item" data-id="{{item}}" bindlongpress="del">
-          <view class="video">
-            <video src="{{item.videourl}}" object-fit="contain" play-btn-position="center"></video>
-          </view>
-          <view class="text">
-            <text>视频名称：{{item.name}}\n上传时间：{{item.createtime}}\n视频简介：{{item.text}}</text>
-          </view>
-          <checkbox data-id="{{item}}" bindtap="changeitem" model:checked="{{item.checked}}" value="{{index}}"></checkbox>
+    <view wx:for="{{videolist}}" wx:key="_id" wx:for-index="index" wx:for-item="item">
+      <view class="item" data-id="{{item}}" bindlongpress="del">
+        <view class="video">
+          <video src="{{item.videourl}}" object-fit="contain" play-btn-position="center"></video>
         </view>
-  </view>
+        <view class="text">
+          <view class="videoname">
+            <text>{{item.name}}</text>
+          </view>
 
-</view>
+          <view class="videotime">
+            {{item.createtime}}
+          </view>
+
+          <view class="videoinfo">{{item.text}}
+          </view>
+        </view>
+        <checkbox data-id="{{item}}" bindtap="changeitem" model:checked="{{item.checked}}" value="{{index}}"></checkbox>
+      </view>
+    </view>
+
+  </view>
 </view>

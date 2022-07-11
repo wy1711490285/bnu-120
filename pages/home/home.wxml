@@ -20,7 +20,7 @@
     <view class="mytopview">
         <!-- 有数据 才有info=true  -->
         <!-- 有list，才有以下内容 -->
-        <view class="topVisible" wx:if="{{info}}" wx:for="{{list}}">
+        <view class="topVisible" wx:if="{{info}}" wx:for="{{list}}" wx:key="{{item}}">
             <view class="imgview">
                 <!-- 以下style只调整大小，别放到wxss里 -->
                 <button class="fview" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="width:160rpx;height:160rpx;padding:0;">

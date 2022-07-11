@@ -2,7 +2,8 @@ Page({
     data: {
         openid: '',
         videolist: [],
-        ti: true
+        ti: true,
+        haveCertificate: false
     },
 
     zhengshu: function () {
@@ -33,7 +34,10 @@ Page({
             ti: false
         })
     },
+    onReady(){
+    },
     getvideolist() {
+        // console.log(typeof(this.videolist))
         const that = this
         wx.cloud.database().collection('video').where({
             _openid: that.data.openid
@@ -41,10 +45,19 @@ Page({
             that.setData({
                 videolist: res.data
             })
+            if (this.data.videolist.length>0) {
+                this.setData({
+                    haveCertificate: true
+                })
+            }else{
+                this.setData({
+                    haveCertificate: false
+                })
+            }
             console.log(res)
         }).catch(res => {
             console.log('fail')
-        })
+        });
     },
     del(e) {
         const that = this;
