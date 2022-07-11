@@ -20,7 +20,11 @@
     <view class="mytopview">
         <!-- 有数据 才有info=true  -->
         <!-- 有list，才有以下内容 -->
+<<<<<<< HEAD
         <view class="topVisible" wx:if="{{info}}" wx:for="{{list}}" wx:key="{{item}}">
+=======
+        <view class="topVisible" wx:if="{{info}}" wx:for="{{userList}}" wx:key="_id">
+>>>>>>> 77cd29b912885cf8c4cdf9ac2d93981e3ad495d3
             <view class="imgview">
                 <!-- 以下style只调整大小，别放到wxss里 -->
                 <button class="fview" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="width:160rpx;height:160rpx;padding:0;">
@@ -29,22 +33,23 @@
             </view>
             <view class="infoview">
                 <view class="box">姓名: {{item.name}}</view>
-                <view class="box">入学年份:{{item.sname}}</view>
-                <view class="box">联系方式:{{item.sphone}}</view>
+                <view class="box">入学年份:{{item.grade}}级</view>
+                <view class="box">联系方式:{{item.phone}}</view>
             </view>
         </view>
         <!-- 没有list，才有以下内容 是不是可以删掉--》【wx:if="{{!info}} -->
         <view wx:if="{{!info}}" class="please">
             <view class="pleText" style="position: relative; top: 90rpx">
-                *******写一些对北师大祝福的话
+                <span>庆祝语</span>
             </view>
-            <button bind:chooseavatar="upInfo"  type="default" style="position: relative; top: 190rpx">请完善您的信息</button>
+            <!-- <button bind:chooseavatar="upInfo"  type="default" style="position: relative; top: 190rpx">请完善您的信息</button> -->
+            <button bindtap="upInfo"  type="default" style="position: relative; top: 190rpx">请完善您的信息</button>
         </view>
     </view>
 
     <view class="mybelowview">
-        <!-- 有数据 才有videoinfo=true   -->
-        <view wx:if="{{videoinfo}}" wx:for="{{videolist}}" wx:key="_id" wx:for-index="index" wx:for-item="item">
+        <!-- 有数据 才有videoInfo=true   -->
+        <view wx:if="{{videoInfo}}" wx:for="{{videoList}}" wx:key="_id" wx:for-index="index" wx:for-item="item">
             <view class="videoitem" data-id="{{item}}">
                 <video class="video" src="{{item.videourl}}" object-fit="contain" play-btn-position="center"></video>
                 <view class="text" bindlongpress="del">
@@ -54,12 +59,12 @@
                 </view>
             </view>
         </view>
-        <view wx:if="{{!videoinfo}}">写一些感谢您上传视频bbbbb</view>
+        <view wx:if="{{!videoInfo}}">暂未上传视频！</view>
     </view>
 
 </view>
 
 <!-- 弹出按钮 -->
-<view class="releaseBtn" bind:tap="gotoUpdate">
+<view class="releaseBtn" bindtap="gotoUpdate">
     <image class="releaseIcon" src="/images/add2.png" />
 </view>
