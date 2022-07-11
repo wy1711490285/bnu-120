@@ -74,8 +74,11 @@ Page({
                 wx.hideLoading();
                 //如果成功，则返回
                 if (res.errMsg == "collection.update:ok") {
-                    wx.switchTab({
-                        url: "../user/user",
+                    // wx.switchTab({
+                    //     url: "../user/user",
+                    // });
+                    wx.navigateBack({
+                        delta: 1,
                     });
                 } else {
                     wx.showModal({

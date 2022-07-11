@@ -8,28 +8,28 @@ Page({
         // 头像
         avatarUrl: defaultAvatarUrl,
         //
-        videolist: [],
+        videoList: [],
         // 
-        list: [],
+        userList: [],
         // 
         info: false,
-        videoinfo: false,
+        videoInfo: false,
 
         // 下拉菜单的数据
         tabType: 'tab1',
         key: 'tab1',
         conditionList: [{
-                title: '修改您的信息',
-                id: '1'
-            },
-            {
-                title: '管理员登陆',
-                id: '2'
-            },
-            {
-                title: '联系我们',
-                id: '3'
-            },
+            title: '修改您的信息',
+            id: '1'
+        },
+        {
+            title: '管理员登陆',
+            id: '2'
+        },
+        {
+            title: '联系我们',
+            id: '3'
+        },
 
         ],
 
@@ -45,21 +45,21 @@ Page({
         nav: '',
 
         show: [{
-                image: "图片11111111地址",
-                name: "图片111文字描述"
-            },
-            {
-                image: "图片1地址",
-                name: "图片1文字描述"
-            },
-            {
-                image: "图片2地址",
-                name: "图片2文字描述"
-            },
-            {
-                image: "图片3地址",
-                name: "图片3文字描述"
-            },
+            image: "图片11111111地址",
+            name: "图片111文字描述"
+        },
+        {
+            image: "图片1地址",
+            name: "图片1文字描述"
+        },
+        {
+            image: "图片2地址",
+            name: "图片2文字描述"
+        },
+        {
+            image: "图片3地址",
+            name: "图片3文字描述"
+        },
 
         ]
     },
@@ -69,6 +69,13 @@ Page({
     upInfo: function () {
         wx.navigateTo({
             url: '../message/message',
+        }).then(res => {
+            console.log(res)
+            if (res.errMsg === 'navigateTo:ok') {
+                this.setData({
+                    info: true
+                })
+            }
         })
     },
     // 是否展开列表
@@ -84,7 +91,7 @@ Page({
 
         if (e.currentTarget.dataset.id === "1") {
             wx.redirectTo({
-                url: '../modify-userInfo/modify-userInfo',
+                url: '../message/message',
             })
         } else if (e.currentTarget.dataset.id === "2") {
             wx.redirectTo({
@@ -117,7 +124,7 @@ Page({
                     wx.redirectTo({
                         url: '../login/login',
                     })
-                } else if (res.cancel) {}
+                } else if (res.cancel) { }
             }
         })
     },
@@ -142,25 +149,25 @@ Page({
             this.setData({
                 openId: resp.result.openid
             })
-            //进行数据库操作
-            console.log("openid：", this.data.openId)
-            const db = wx.cloud.database()
-            db.collection('user')
-                .where({
-                    _openid: this.data.openId
-                })
-                .get()
-                .then(res => {
-                    console.log("ahahhahh", res)
-                    this.setData({
-                        list: res.data,
-                        message: true
-                    })
-                    console.log(this.data.list)
-                })
-                .catch(err => {
-                    console.log(err + "请求失败")
-                })
+            // //进行数据库操作
+            // console.log("openid：", this.data.openId)
+            // const db = wx.cloud.database()
+            // db.collection('user')
+            //     .where({
+            //         _openid: this.data.openId
+            //     })
+            //     .get()
+            //     .then(res => {
+            //         console.log("ahahhahh", res)
+            //         this.setData({
+            //             userList: res.data,
+            //             message: true
+            //         })
+            //         console.log(this.data.userList)
+            //     })
+            //     .catch(err => {
+            //         console.log(err + "请求失败")
+            //     })
 
 
         }).catch((e) => {
@@ -177,7 +184,30 @@ Page({
             avatarUrl,
         })
     },
+    getUserInfo() {
+        //进行数据库操作
+        console.log("openid：", this.data.openId)
+        const db = wx.cloud.database()
+        db.collection('user')
+            .where({
+                _openid: this.data.openId
+            })
+            .get()
+            .then(res => {
+                console.log("ahahhahh", res)
+                this.setData({
+                    userList: res.data,
+                    // message: true
+                })
+                console.log(this.data.userList)
+            })
+            .catch(err => {
+                console.log(err + "请求失败")
+            })
+
+    },
     onShow() {
+        this.getUserInfo();
         this.getvideolist();
     },
     getvideolist() {
@@ -186,7 +216,7 @@ Page({
             _openid: that.data.openid
         }).get().then(res => {
             that.setData({
-                videolist: res.data
+                videoList: res.data
             })
             console.log(res)
         }).catch(res => {
